@@ -1,0 +1,153 @@
+//    {loading ? (
+//         <View
+//           style={{
+//             flex: 1,
+//             justifyContent: "center",
+//             alignItems: "center",
+//             opacity: 0.1,
+//           }}
+//         >
+//           <ActivityIndicator size="large" color="#0000ff" />
+//         </View>
+//       ) :
+//       <ScrollView
+//         contentContainerStyle={{flex:1}}
+//         style={{ }}
+//         refreshControl={
+//           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+//         }
+//       >
+//               <View style={{ flexDirection: "row" }}>
+//           <PopupMenu id={1} />
+//           {/* <Test /> */}
+//           <View style={Styles.calendar}>
+//             <View style={Styles.calendar_block}>
+//               <TouchableOpacity onPress={prevDate}>
+//                 <Icon
+//                   name="chevron-left"
+//                   size={22}
+//                   style={[Styles.btn_navigation, { color: btn_ColorPrev }]}
+//                 />
+//               </TouchableOpacity>
+//               <View
+//                 style={{
+//                   flexDirection: "row",
+//                   width: "80%",
+//                   // backgroundColor:'red',
+//                   justifyContent: "center",
+//                 }}
+//               >
+//                 <Text style={{ fontSize: 18 }}>{days.format("DD")}</Text>
+
+//                 <Icon
+//                   name="calendar"
+//                   size={16}
+//                   style={{ color: "black", padding: 3 }}
+//                 />
+//               </View>
+//               <TouchableOpacity onPress={nextDay}>
+//                 <Icon
+//                   name="chevron-right"
+//                   size={22}
+//                   style={[Styles.btn_navigation, { color: btn_ColorNext }]}
+//                 />
+//               </TouchableOpacity>
+//             </View>
+//           </View>
+//         </View>
+//         <View style={Styles.Pitch_container}>
+          
+//           {dataPitch.map((item: any, index: any) => (
+//             <View key={index} style={Styles.Pitch_wrap}>
+//               <View style={Styles.Pitch_element}>
+//                 <Text style={Styles.Time_Football}>{item.timeSlot}</Text>
+
+//                 {item.timeEnd<=getHour && codeToday === codeNewDay ? (
+//                   <Animatable.View animation="flash" duration={1000}>
+//                     <Icon
+//                       name="close"
+//                       style={[Styles.Icon_Football, { color: "red" }]}
+//                     />
+//                   </Animatable.View>
+//                 ) : getHour < item.timeStart &&
+//                   item.status === "payed" &&
+//                   codeToday == codeNewDay ? (
+//                   // <Icon
+//                   //   name="soccer-ball-o"
+//                   //   style={[Styles.Icon_Football, { color: "green" }]}
+//                   // />
+//                   <TouchableOpacity
+//                     onPress={() => {
+//                       Alert.alert("da dat san");
+//                     }}
+//                   >
+//                     <Icon
+//                       name="soccer-ball-o"
+//                       style={[Styles.Icon_Football, { color: "purple" }]}
+//                     />
+//                   </TouchableOpacity>
+//                 ) : item.timeStart <= getHour <= item.timeEnd &&
+//                   item.status == "payed" &&
+//                   codeToday == codeNewDay ? (
+//                   <TouchableOpacity
+//                     onPress={() => {
+//                       Alert.alert("dang choi");
+//                     }}
+//                   >
+//                     <Icon
+//                       name="soccer-ball-o"
+//                       style={[Styles.Icon_Football, { color: "green" }]}
+//                     />
+//                   </TouchableOpacity>
+//                 ) : item.status === "pending" && codeToday != codeNewDay ? (
+//                   <TouchableOpacity
+//                     onPress={() => {
+//                       navigation.navigate("DetailsFootball", {
+//                         id: item.id,
+//                         nanmePitch: namePitch,
+//                         price: item.price,
+//                         time: item.timeSlot,
+//                       });
+//                     }}
+//                   >
+//                     <Icon
+//                       name="plus"
+//                       style={[Styles.Icon_Football, { color: "gray" }]}
+//                     />
+//                   </TouchableOpacity>
+//                 ) : item.status === "payed" && codeToday != codeNewDay ? (
+//                   <TouchableOpacity
+//                     onPress={() => {
+//                       Alert.alert("da dat san");
+//                     }}
+//                   >
+//                     <Icon
+//                       name="soccer-ball-o"
+//                       style={[Styles.Icon_Football, { color: "purple" }]}
+//                     />
+//                   </TouchableOpacity>
+//                 ) :  (
+//                   <TouchableOpacity
+//                     onPress={() => {
+                    
+//                       dispatch(setTimeBooking(isToday));
+//                       navigation.navigate("DetailsFootball", {
+//                         id: item.id,
+//                         nanmePitch: namePitch,
+//                         price: item.price,
+//                         time: item.timeSlot,
+//                       });
+//                     }}
+//                   >
+//                     <Icon
+//                       name="plus"
+//                       style={[Styles.Icon_Football, { color: "gray" }]}
+//                     />
+//                   </TouchableOpacity>
+//                 )}
+//               </View>
+//             </View>
+//           ))}
+//         </View>
+//       </ScrollView>
+//       }
